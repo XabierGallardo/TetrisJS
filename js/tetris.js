@@ -4,13 +4,13 @@ const ctx = cvs.getContext("2d"); //this gives us methods and properties that al
 const ROW = 20;
 const COL = COLUMN = 10;
 const SQ = squareSize = 20;
-const VACANT = "white"; //color of an empty square
+const VACANT = "#636161"; //color of an empty square
 
 //Draw a square
 function drawSquare(x,y,color) {
-
-	ctx.fillStyle = "white";
+	ctx.fillStyle = color;
 	ctx.fillRect(x*SQ,y*SQ,SQ,SQ);
+
 	ctx.strokeStyle = "black";
 	ctx.strokeRect(x*SQ,y*SQ,SQ,SQ);
 }
@@ -37,3 +37,46 @@ function drawBoard() {
 }
 
 drawBoard();
+
+//Pieces and colors
+//Original tetris colors: purple, yellow, orange, blue, aqua, green, red
+const PIECES = [
+	[Z, "red"],
+	[S, "green"],
+	[T, "purple"],
+	[O, "yellow"],
+	[I, "aqua"],
+	[J, "blue"],
+	[L, "orange"]
+];
+
+//Initiate a piece
+let p = new Piece(PIECES[0][0],PIECES[0][1]); //new Piece(tetromino, color)
+
+//Object piece
+function Piece(tetromino,color) {
+	this.tetromino = tetromino;
+	this.color = color;
+
+	this.tetrominoN = 0; //Start from the first pattern
+	this.activeTetromino = this.tetromino[this.tetrominoN];
+
+	//Control the pieces
+	this.x = 2;
+	this.y = 4;
+}
+
+//Draw piece to the board
+Piece.prototype.draw = function() {
+	for(r = 0; r < this.activeTetromino.length; r++) {
+		for(c = 0; c < this.activeTetromino.length; c++) {
+			
+			//Draw only occupied squares
+			if(this.activeTetromino[r][c]) {
+				drawSquare(this.x + c,this.y + r,this.color);	
+			}
+		}
+	}
+}
+
+p.draw();

@@ -1,1 +1,14 @@
-/*Original tetris colors: null, purple, yellow, orange, blue, aqua, green, red*/  
+body {
+	background-image: url("../media/gameboy_background_sm.jpg");
+	background-size: 55% 100%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#board {
+	display: flex;
+	justify-content: center;
+	height: 400px;
+	margin-top: 148px;
+}
