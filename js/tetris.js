@@ -6,6 +6,7 @@ const COL = COLUMN = 10;
 const SQ = squareSize = 20;
 const VACANT = "#636161"; //color of an empty square
 
+
 //Draw a square
 function drawSquare(x,y,color) {
 	ctx.fillStyle = color;
@@ -14,6 +15,7 @@ function drawSquare(x,y,color) {
 	ctx.strokeStyle = "black";
 	ctx.strokeRect(x*SQ,y*SQ,SQ,SQ);
 }
+
 
 //Create the board
 let board = []; //2d array
@@ -27,6 +29,7 @@ for (r = 0; r < ROW; r++) { //rows
 	}
 }
 
+
 //Draw the board to the canvas
 function drawBoard() {
 	for (r = 0; r < ROW; r++) { //rows
@@ -37,6 +40,7 @@ function drawBoard() {
 }
 
 drawBoard();
+
 
 //Pieces and colors
 //Original tetris colors: purple, yellow, orange, blue, aqua, green, red
@@ -50,8 +54,10 @@ const PIECES = [
 	[L, "orange"]
 ];
 
+
 //Initiate a piece
 let p = new Piece(PIECES[0][0],PIECES[0][1]); //new Piece(tetromino, color)
+
 
 //Object piece
 function Piece(tetromino,color) {
@@ -66,17 +72,54 @@ function Piece(tetromino,color) {
 	this.y = 4;
 }
 
-//Draw piece to the board
-Piece.prototype.draw = function() {
+
+//Fill function
+Piece.prototype.fill = function(color) {
 	for(r = 0; r < this.activeTetromino.length; r++) {
 		for(c = 0; c < this.activeTetromino.length; c++) {
 			
 			//Draw only occupied squares
 			if(this.activeTetromino[r][c]) {
-				drawSquare(this.x + c,this.y + r,this.color);	
+				drawSquare(this.x + c,this.y + r,color);	
 			}
 		}
 	}
 }
 
-p.draw();
+
+//Draw piece to the board
+Piece.prototype.draw = function() {
+	this.fill(this.color);
+}
+
+
+//Undraw a piece
+Piece.prototype.unDraw = function() {
+	this.fill(VACANT);
+}
+
+
+//Move Down the piece
+Piece.prototype.moveDown = function() {
+	this.unDraw()
+	this.y++;
+	this.draw();
+}
+
+
+
+//Drop the piece every 1 sec
+let dropStart = Date.now();
+
+function drop() {
+	let now = Date.now();
+	let delta = now - dropStart;
+	if(delta > 1000) {
+		p.moveDown();
+		dropStart = Date.now();
+	}
+	
+	requestAnimationFrame(drop);
+}
+
+drop();
