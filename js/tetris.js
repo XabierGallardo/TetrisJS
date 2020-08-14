@@ -107,6 +107,52 @@ Piece.prototype.moveDown = function() {
 }
 
 
+//Move Right the piece
+Piece.prototype.moveRight = function() {
+	this.unDraw();
+	this.x++;
+	this.draw();
+}
+
+//Move Left the piece
+Piece.prototype.moveLeft = function() {
+	this.unDraw();
+	this.x--;
+	this.draw();
+}
+
+
+//Rotate the piece
+Piece.prototype.rotate = function() {
+	this.unDraw();
+	this.tetrominoN = (this.tetrominoN + 1)%this.tetromino.length; //(0+1)%4 => 1
+	this.activeTetromino = this.tetromino[this.tetrominoN];
+	this.draw();
+}
+
+
+//Control the piece
+document.addEventListener("keydown", CONTROL);
+
+function CONTROL(event) {
+
+	if(event.keyCode == 37) { //left arrow key
+		p.moveLeft();
+		dropStart = Date.now();
+
+	} else if(event.keyCode == 38) { //up arrow key
+		p.rotate();
+		dropStart = Date.now();
+
+	} else if(event.keyCode == 39) { //right arrow key
+		p.moveRight();
+		dropStart = Date.now();
+
+	} else if(event.keyCode == 40) { //down arrow key
+		p.moveDown();
+	}
+}
+
 
 //Drop the piece every 1 sec
 let dropStart = Date.now();
