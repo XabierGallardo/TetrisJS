@@ -55,8 +55,17 @@ const PIECES = [
 ];
 
 
+//Generate random pieces
+function randomPiece() {
+	//Return numbers betweeen 0 and 6
+	let r = randomN = Math.floor(Math.random() * PIECES.length);
+	//new Piece(tetromino, color)
+	return new Piece(PIECES[r][0],PIECES[r][1]); 
+}
+
+
 //Initiate a piece
-let p = new Piece(PIECES[0][0],PIECES[0][1]); //new Piece(tetromino, color)
+let p = randomPiece();
 
 
 //Object piece
@@ -68,8 +77,8 @@ function Piece(tetromino,color) {
 	this.activeTetromino = this.tetromino[this.tetrominoN];
 
 	//Control the pieces
-	this.x = 2;
-	this.y = 4;
+	this.x = 3;
+	this.y = -2;
 }
 
 
@@ -108,6 +117,7 @@ Piece.prototype.moveDown = function() {
 		this.draw();	
 	} else {
 		//lock piece and generate a new one
+		p = randomPiece();
 	}
 }
 
@@ -174,7 +184,7 @@ Piece.prototype.collision = function(x,y,piece) {
 			let newY = this.y + r + y;
 
 			//conditions
-			if(newX < 0 || newX > COL || newY > ROW) {
+			if(newX < 0 || newX >= COL || newY >= ROW) {
 				return true;
 			}
 
@@ -189,6 +199,7 @@ Piece.prototype.collision = function(x,y,piece) {
 			}
 		}
 	}
+	return false;
 }
 
 
