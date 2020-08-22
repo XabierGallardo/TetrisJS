@@ -1,5 +1,6 @@
 const cvs = document.getElementById("tetris"); //create canvas
 const ctx = cvs.getContext("2d"); //this gives us methods and properties that allow us to draw on the canvas
+const scoreElement = document.getElementById("score_result");
 
 const ROW = 20;
 const COL = COLUMN = 10;
@@ -170,6 +171,7 @@ Piece.prototype.rotate = function() {
 	}
 }
 
+let score = 0; //Initial score
 
 Piece.prototype.lock = function() {
 	for(r = 0; r < this.activeTetromino.length; r++) {
@@ -189,6 +191,34 @@ Piece.prototype.lock = function() {
 			board[this.y + r][this.x + c] = this.color;
 		}
 	}
+	//Eliminate a full row, moving rows down
+	for(r = 0; r < ROW; r++) {
+		let isRowFull = true;
+		for(c= 0; c < COL; c++) {
+			isRowFull = isRowFull && (board[r][c] != VACANT);
+		}
+		if(isRowFull) {
+			//If the row is full, move all the rows above
+			for(y = r; y > 1; y--) {
+				for(c = 0; c < COL; c++) {
+					board[y][c] = board[y-1][c];
+				}
+			}
+			//the top row board[0][..] has no row above it
+			for(c = 0; c < COL; c++) {
+				for(c = 0; c < COL; c++) {
+					board[0][c] = VACANT;
+				}
+				//Increment the score
+				score += 10;
+			}
+		}
+	}
+	//Update the board (after removing the rows)
+	drawBoard();
+
+	//Update score
+	scoreElement.innerHTML = score;
 }
 
 
