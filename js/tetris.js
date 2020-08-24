@@ -5,7 +5,7 @@ const scoreElement = document.getElementById("score_result");
 const ROW = 20;
 const COL = COLUMN = 10;
 const SQ = squareSize = 20;
-const VACANT = "#636161"; //color of an empty square
+const VACANT = "#727374"; //color of an empty square
 
 
 //Draw a square
@@ -46,13 +46,13 @@ drawBoard();
 //Pieces and colors
 //Original tetris colors: purple, yellow, orange, blue, aqua, green, red
 const PIECES = [
-	[Z, "red"],
-	[S, "green"],
-	[T, "purple"],
-	[O, "yellow"],
+	[Z, "#fe0100"],
+	[S, "#00ff01"],
+	[T, "#ff00fe"],
+	[O, "#ffff01"],
 	[I, "aqua"],
-	[J, "blue"],
-	[L, "orange"]
+	[J, "#010080"],
+	[L, "#ff8001"]
 ];
 
 

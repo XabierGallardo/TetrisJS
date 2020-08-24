@@ -12,7 +12,7 @@ body {
 	background-repeat: no-repeat;
 	background-position: center;
 	font-size: larger;
-	overflow-block: hidden;
+	overflow-block: visible;
 }
 
 #board, #instructions, #about {
@@ -26,10 +26,27 @@ body {
 	margin-top: 143px;
 }
 
-#instructions {
+h2 {
+	border: 5px solid black;
+	border-radius: 60px;
+	padding: 4px;
+	width: 185px;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+#mouse {
+	margin-top: 55px;
+}
+
+#instructions, #about {
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
+	height: 95vh;
 	justify-content: start;
 }
 
@@ -42,11 +59,14 @@ body {
 .instructions_keyboard_buttons img {
 	width: 40px;
 	height: 40px;
+	border: 5px solid black;
 	border-radius: 10px;
 }
 
 .instructions_mouse_buttons img {
-	width: 80px;
+	width: 50px;
+	border: 5px solid black;
+	border-radius: 10px;
 }
 
 .instructions_keyboard_buttons p, .instructions_mouse_buttons p {
@@ -54,11 +74,18 @@ body {
 }
 
 #about {
-	display: flex;
-	flex-direction: column;
 	align-items: flex-end;
 }
 
-#score_board {
-	margin-right: 20px;
+#score_board, #code {
+	margin-right: 10px;
+}
+
+#code {
+	margin-top: 314px;
+}
+
+#code:hover {
+	color: white;
+	background: black;
 }
