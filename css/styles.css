@@ -39,6 +39,10 @@ a {
 	color: black;
 }
 
+#keyboard, #mouse {
+	margin-left: 5px;
+}
+
 #mouse {
 	margin-top: 55px;
 }
@@ -54,6 +58,7 @@ a {
 	display: flex;
 	width: 300px;
 	align-items: center;
+	margin-left: 15px;
 }
 
 .instructions_keyboard_buttons img {
@@ -78,7 +83,7 @@ a {
 }
 
 #score_board, #code {
-	margin-right: 10px;
+	margin-right: 5px;
 }
 
 #code {
