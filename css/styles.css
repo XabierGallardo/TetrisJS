@@ -43,15 +43,18 @@ a {
 	margin-left: 5px;
 }
 
-#mouse {
-	margin-top: 55px;
-}
-
 #instructions, #about {
 	display: flex;
 	flex-direction: column;
-	height: 95vh;
-	justify-content: start;
+	justify-content: space-between;
+}
+
+#instructions {
+	height: 600px;
+}
+
+#about {
+	height: 521px;
 }
 
 .instructions_keyboard_buttons, .instructions_mouse_buttons {
@@ -86,11 +89,29 @@ a {
 	margin-right: 5px;
 }
 
-#code {
-	margin-top: 314px;
-}
-
 #code:hover {
 	color: white;
 	background: black;
+}
+
+/*Media queries*/
+@media (max-width: 1080px) {
+	body {
+		font-size: small;
+		background-image: url("../media/gameboy_background_small_resize.jpg");
+		background-size: 45% 65%;
+	}
+
+	#board {
+		height: 315px;
+		margin-top: 211px;
+	}
+
+	h2 {
+		width: 115px;
+	}
+
+	.instructions_keyboard_buttons p, .instructions_mouse_buttons p {
+		margin-left: 5px;
+	}
 }
