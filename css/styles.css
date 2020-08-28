@@ -7,7 +7,7 @@ body {
 	display: flex;
 	font-family: "futura";
 	background-image: url("../media/gameboy_background_sm.jpg");
-	background-size: 55% 100%;
+	background-size: 50% 100%;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -15,9 +15,7 @@ body {
 	overflow-block: visible;
 }
 
-#board, #instructions, #about {
-	flex: 1;
-}
+#board, #instructions, #about { flex: 1; }
 
 #board {
 	display: flex;
@@ -39,9 +37,7 @@ a {
 	color: black;
 }
 
-#keyboard, #mouse {
-	margin-left: 5px;
-}
+#keyboard, #mouse { margin-left: 5px; }
 
 #instructions, #about {
 	display: flex;
@@ -49,13 +45,9 @@ a {
 	justify-content: space-between;
 }
 
-#instructions {
-	height: 600px;
-}
+#instructions { height: 600px; }
 
-#about {
-	height: 521px;
-}
+#about { height: 521px; }
 
 .instructions_keyboard_buttons, .instructions_mouse_buttons {
 	display: flex;
@@ -77,17 +69,11 @@ a {
 	border-radius: 10px;
 }
 
-.instructions_keyboard_buttons p, .instructions_mouse_buttons p {
-	margin-left: 20px;
-}
+.instructions_keyboard_buttons p, .instructions_mouse_buttons p { margin-left: 20px; }
 
-#about {
-	align-items: flex-end;
-}
+#about { align-items: flex-end; }
 
-#score_board, #code {
-	margin-right: 5px;
-}
+#score_board, #code { margin-right: 5px; }
 
 #code:hover {
 	color: white;
@@ -96,22 +82,46 @@ a {
 
 /*Media queries*/
 @media (max-width: 1080px) {
+	
 	body {
 		font-size: small;
-		background-image: url("../media/gameboy_background_small_resize.jpg");
-		background-size: 45% 65%;
+		background-size: 63% 100%;
 	}
-
-	#board {
-		height: 315px;
-		margin-top: 211px;
-	}
-
 	h2 {
 		width: 115px;
+	}
+
+	#about {
+		height: 503px;
 	}
 
 	.instructions_keyboard_buttons p, .instructions_mouse_buttons p {
 		margin-left: 5px;
 	}
+}
+
+@media (max-width: 980px) {
+
+	body {
+		background-size: 99% 100%;
+		background-position: initial;
+	}
+
+	#instructions { display: none; }
+
+	#board {
+		margin-top: 143px;
+		margin-left: 33%;
+		height: 403px;
+	}
+
+	#about { justify-content: flex-start; }
+
+	#score_board, #code {
+		background: white;
+	}
+}
+
+@media (max-width: 505px) {
+	#board { margin-left: 25%;}
 }
