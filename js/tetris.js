@@ -182,7 +182,7 @@ Piece.prototype.lock = function() {
 			}
 			//pieces to lock on top = game over
 			if(this.y + r < 0) {
-				alert("Game Over");
+				document.getElementById("board").innerHTML = "<h1 id='gameover'>GAME OVER</h1>";
 				//stop request animation frame
 				gameOver = true;
 				break;

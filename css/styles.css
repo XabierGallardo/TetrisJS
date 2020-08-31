@@ -20,8 +20,13 @@ body {
 #board {
 	display: flex;
 	justify-content: center;
-	height: 405px;
-	margin-top: 143px;
+	height: 53vh;
+	margin-top: 18.8vh;
+}
+
+#gameover {
+	font-size: xx-large;
+	padding: 28% 0;
 }
 
 h2 {
@@ -87,17 +92,11 @@ a {
 		font-size: small;
 		background-size: 63% 100%;
 	}
-	h2 {
-		width: 115px;
-	}
+	h2 { width: 115px; }
 
-	#about {
-		height: 503px;
-	}
+	#about { height: 503px; }
 
-	.instructions_keyboard_buttons p, .instructions_mouse_buttons p {
-		margin-left: 5px;
-	}
+	.instructions_keyboard_buttons p, .instructions_mouse_buttons p { margin-left: 5px; }
 }
 
 @media (max-width: 980px) {
@@ -109,19 +108,30 @@ a {
 
 	#instructions { display: none; }
 
-	#board {
-		margin-top: 143px;
-		margin-left: 33%;
-		height: 403px;
-	}
+	#board { margin-left: 33%; }
 
 	#about { justify-content: flex-start; }
 
 	#score_board, #code {
 		background: white;
 	}
+	#gameover { 
+		padding: 18vh 0; 
+	}
+}
+
+@media (max-width: 630px) {
+	#gameover { font-size: x-large; }
+	#board { margin-left: 31%; }
 }
 
 @media (max-width: 505px) {
-	#board { margin-left: 25%;}
+	#board { margin-left: 27%; }
+	#about{ font-size: xx-small; }
+	h2 { width: 80px; }
+	#gameover { margin-left: 40%; }
+}
+
+@media (max-width: 405px) {
+	#board { margin-left: 22%;}
 }
