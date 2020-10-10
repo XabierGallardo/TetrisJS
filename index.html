@@ -1,69 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+<head>
         <meta charset="UTF-8">
         <title>Tetris JS / ТетрисJS</title>
-
         <!--CSS-->
     	<link rel="stylesheet" type="text/css" href="css/styles.css">
-    </head>
+</head>
 
     <body>
 
-            <div id="instructions">
+       <!--	INSTRUCTIONS -->
+       <div id="instructions">
 
-                <!-- KEYBOARD -->
-                <h2 id="keyboard">KEYBOARD</h2>
+            <!-- Keyboard instructions -->
+            <h2 id="keyboard">KEYBOARD</h2>
 
-                    <div class="instructions_keyboard_buttons">
-                        <img src="media/gameboy_arrow_up.jpg">
-                        <p>Rotate piece</p>
-                    </div>
-
-                    <div class="instructions_keyboard_buttons">
-                        <img src="media/gameboy_arrow_left.jpg">
-                        <p>Move left</p>
-                    </div>
-
-                    <div class="instructions_keyboard_buttons">
-                        <img src="media/gameboy_arrow_down.jpg">
-                        <p>Move down</p>
-                    </div>
-
-                    <div class="instructions_keyboard_buttons">
-                        <img src="media/gameboy_arrow_right.jpg">
-                        <p>Move right</p>
-                    </div>
-
-
-                    <!-- MOUSE -->
-                    <h2 id="mouse">MOUSE</h2>
-                    <div class="instructions_mouse_buttons">
-                        <a href="index.html">
-                            <img src="media/gameboy_start.jpg">
-                        </a>
-                        <p>Restart Game</p>
-                    </div>
-                </div>
-                
-
-                
-
+            <div class="instructions_keyboard_buttons">
+                <img src="media/gameboy_arrow_up.jpg">
+                <p>Rotate piece</p>
             </div>
 
+            <div class="instructions_keyboard_buttons">
+                <img src="media/gameboy_arrow_left.jpg">
+                <p>Move left</p>
+            </div>
+
+            <div class="instructions_keyboard_buttons">
+                <img src="media/gameboy_arrow_down.jpg">
+                <p>Move down</p>
+            </div>
+
+            <div class="instructions_keyboard_buttons">
+                <img src="media/gameboy_arrow_right.jpg">
+                <p>Move right</p>
+            </div>
+
+            <!-- Mouse instructions -->
+            <h2 id="mouse">MOUSE</h2>
+
+            <!-- Restart button-->
+		    <div class="instructions_mouse_buttons">
+                <a href="index.html">
+                    <img src="media/gameboy_start.jpg">
+                </a>
+                <p>Restart Game</p>
+            </div>
+
+        </div>
+        
+
+	   <!--	BOARD -->
             <div id="board">
                 <canvas id="tetris" width="200" height="400"></canvas>
             </div>
 
-            <div id="about">
-                <h2 id="score_board">SCORE: <a id="score_result">0</a></h2>
-                <a href="https://github.com/XabierGallardo/TetrisJS">
+
+	   <!--	ABOUT -->
+            <div id="info">
+
+                <h2 id="score_board">SCORE: 
+                    <a id="score_result">0</a>
+                </h2>
+               	
+        		<a href="https://en.wikipedia.org/wiki/Tetris">
+                    <h2 id="tetris">TETRIS</h2>
+                </a>
+
+	           	<a href="https://github.com/XabierGallardo/TetrisJS">
                     <h2 id="code">CODE</h2>
                 </a>
+
+        		<a href="http://xabiergallardo.com/index.html">
+                    <h2 id="about">ABOUT</h2>
+                </a>
+
             </div>
         
         <!--JavaScript-->
     	<script type="text/javascript" src="js/tetrominoes.js"></script>
         <script type="text/javascript" src="js/tetris.js"></script>
+    
     </body>
+
 </html>

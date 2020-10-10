@@ -10,4 +10,4 @@ Enjoy playing this russian masterpiece made in 1984 by Alexey Pajitnov, дава
 
 <br>
 
-<img src="media/sample.PNG" alt="Game Sample Image">
+<img src="media/sampletetris.png" alt="Tetris Game Sample Image">
