@@ -8,6 +8,4 @@ Enjoy playing this russian masterpiece made in 1984 by Alexey Pajitnov, дава
 
 Наслаждайтесь игрой этого русского шедевра Алексея Пажитнова, сделанного в 1984, давай! :floppy_disk:
 
-<br>
-
 <img src="media/sampletetris.png" alt="Tetris Game Sample Image">
